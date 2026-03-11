@@ -6,6 +6,7 @@ import {
 import { StatCard, SectionTitle, NavTabs } from "@/components/SharedComponents";
 import { stats, submissions } from "@/data/reportData";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Monad Blitz CDMX — Reporte Frutero Club",
@@ -21,6 +22,18 @@ export default function Home() {
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-purple-950/20 via-black to-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
+            <div className="flex items-center justify-center mb-6">
+              <div className="relative w-[90px] h-[90px] md:w-[120px] md:h-[120px]">
+                <Image
+                  src="/frutero-club-logo.png"
+                  alt="Frutero Club"
+                  fill
+                  priority
+                  className="object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.35)]"
+                />
+              </div>
+            </div>
+
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm mb-6 border border-purple-500/20">
               <Sparkles className="w-4 h-4" />
               Monad Blitz CDMX — 21 Feb 2026
@@ -227,10 +240,19 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-[#333]">
+      <footer className="py-10 px-4 border-t border-[#333]">
         <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
-          <p>Reporte generado por Frutero Club 🍌</p>
-          <p className="mt-2">Monad Blitz CDMX — 21 de febrero 2026</p>
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <Image
+              src="/frutero-club-logo.png"
+              alt="Frutero Club"
+              width={28}
+              height={28}
+              className="object-contain"
+            />
+            <span>Reporte generado por Frutero Club</span>
+          </div>
+          <p>Monad Blitz CDMX — 21 de febrero 2026</p>
         </div>
       </footer>
     </main>
